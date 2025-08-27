@@ -1,0 +1,152 @@
+site_name: Anti-India Campaign Detection System
+site_description: Comprehensive documentation for the Anti-India Campaign Detection System
+site_author: Security Intelligence Team
+site_url: https://security-intel.github.io/anti-india-campaign-detector/
+
+repo_name: security-intel/anti-india-campaign-detector
+repo_url: https://github.com/security-intel/anti-india-campaign-detector
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: red
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  icon:
+    logo: material/shield-check
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: en
+  - mermaid2:
+      version: 10.6.1
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - awesome-pages
+  - include-markdown
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: security-intel
+      repo: anti-india-campaign-detector
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Project Overview:
+    - Overview: project-overview/overview.md
+    - Scope & Definitions: project-overview/scope-definitions.md
+    - Objectives: project-overview/objectives.md
+  - System Architecture:
+    - Architecture Overview: architecture/overview.md
+    - System Components: architecture/components.md
+    - Technology Stack: architecture/technology-stack.md
+    - UML Diagrams: architecture/uml-diagrams.md
+    - Sequence Diagrams: architecture/sequence-diagrams.md
+  - Core Features:
+    - Feature Overview: features/overview.md
+    - SIGINT Module: features/sigint.md
+    - HUMINT Module: features/humint.md
+    - NLP Engine: features/nlp.md
+    - Dashboard: features/dashboard.md
+  - Implementation Strategy:
+    - Problem-Solution Mapping: strategy/problem-solution.md
+    - Intelligence Gathering: strategy/intelligence.md
+    - Data Flow: strategy/data-flow.md
+    - Security Considerations: strategy/security.md
+  - API Reference:
+    - API Overview: api/overview.md
+    - Scanner API: api/scanner.md
+    - Analysis API: api/analysis.md
+    - Dashboard API: api/dashboard.md
+  - Development:
+    - Setup Guide: development/setup.md
+    - Development Environment: development/environment.md
+    - Testing: development/testing.md
+    - Deployment: development/deployment.md
+  - User Guides:
+    - Quick Start: guides/quickstart.md
+    - Configuration: guides/configuration.md
+    - Operations: guides/operations.md
+    - Troubleshooting: guides/troubleshooting.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/security-intel/anti-india-campaign-detector
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:team@security.gov
+  version:
+    provider: mike
+    default: stable
+
+copyright: Copyright &copy; 2024 Security Intelligence Team
