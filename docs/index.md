@@ -8,12 +8,13 @@ The **Anti-India Campaign Detection System** is a comprehensive intelligence-gat
 
 ## 🚀 Key Features
 
-- **Real-time Monitoring**: Continuous surveillance of public Telegram channels
+- **Multi-Platform Monitoring**: Continuous surveillance across Telegram, Instagram, and Twitter
+- **Automated Account Operations**: Real account automation for accessing restricted content
 - **Multi-Intelligence Approach**: Combines SIGINT, HUMINT, and OSINT capabilities
 - **Advanced NLP**: Sentiment analysis and contextual filtering to reduce false positives
-- **Interactive Dashboard**: Streamlit-based visualization for real-time threat assessment
-- **Honeypot Integration**: Advanced HUMINT capabilities for accessing private communities
-- **Crowdsourced Intelligence**: Public tipline for community-driven intelligence gathering
+- **Interactive GUI**: tkinter-based desktop application for data collection and monitoring
+- **Cross-Platform HUMINT**: Advanced capabilities for accessing private communities across platforms
+- **Crowdsourced Intelligence**: Multi-platform tipline for community-driven intelligence gathering
 
 ## 🎯 Mission Statement
 
@@ -28,9 +29,11 @@ graph TB
     C --> D[Visualization & Alerts]
     
     subgraph "Collection Methods"
-        A1[Public Scanner]
-        A2[Tipline Bot]
-        A3[Honeypot Client]
+        A1[Telegram Scanner]
+        A2[Instagram Automation]
+        A3[Twitter Automation]
+        A4[Tipline Bot]
+        A5[Cross-Platform Honeypot]
     end
     
     subgraph "Analysis Engine"
@@ -48,6 +51,8 @@ graph TB
     A --> A1
     A --> A2
     A --> A3
+    A --> A4
+    A --> A5
     
     B --> B1
     B --> B2
@@ -73,17 +78,19 @@ The system follows a modular, layered architecture:
 |-----------|------------|---------|
 | **Core Language** | Python 3.9+ | System development |
 | **Telegram Integration** | Telethon | Channel monitoring |
+| **Instagram Automation** | instagrapi, selenium | Story/post monitoring |
+| **Twitter Automation** | tweepy, selenium | Tweet monitoring |
 | **NLP Engine** | VADER, spaCy | Sentiment analysis |
-| **Web Framework** | FastAPI | API services |
-| **Dashboard** | Streamlit | User interface |
+| **GUI Framework** | tkinter | Desktop user interface |
+| **Visualization** | matplotlib | Data visualization |
 | **Database** | SQLite, Redis | Data storage |
-| **Task Queue** | Celery | Background processing |
+| **Configuration** | ConfigParser | Settings management |
 
 ## 🚦 Project Status
 
 - **Phase**: Proof of Concept Development
 - **Version**: 0.1.0
-- **Target Platform**: Telegram (Initial Focus)
+- **Target Platforms**: Telegram, Instagram, Twitter (Multi-Platform Focus)
 - **Deployment**: Development Environment
 
 ## 📖 Quick Navigation
@@ -143,8 +150,9 @@ aicd-dashboard --debug
 This system is designed with security and legal compliance as primary considerations:
 
 - **Privacy First**: No user de-anonymization or IP tracking
-- **Legal Compliance**: Focuses only on public data sources
+- **Legal Compliance**: Uses account automation within platform Terms of Service
 - **Ethical OSINT**: Follows responsible intelligence gathering practices
+- **Account Safety**: Implements human-like behavior patterns to avoid detection
 - **Data Protection**: Secure handling of sensitive intelligence data
 
 ## 📞 Support & Contact

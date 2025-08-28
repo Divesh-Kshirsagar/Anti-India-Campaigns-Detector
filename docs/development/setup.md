@@ -544,20 +544,17 @@ pytest tests/test_setup.py -v
 python -c "from src.anti_india_campaign_detector import __version__; print(f'Version: {__version__}')"
 ```
 
-2. **Start Development Services**:
+2. **Start Desktop Application**:
 ```bash
-# Terminal 1: Start API server
-uvicorn src.anti_india_campaign_detector.api:app --reload --port 8000
+# Run the main tkinter application
+python src/anti_india_campaign_detector/main.py
 
-# Terminal 2: Start dashboard
-streamlit run src/anti_india_campaign_detector/dashboard.py --server.port 8501
-
-# Terminal 3: Start worker processes
-celery -A src.anti_india_campaign_detector.tasks worker --loglevel=info
+# Or run with configuration file
+python src/anti_india_campaign_detector/main.py --config config/settings.ini
 ```
 
-3. **Access Development Interfaces**:
-   - **API Documentation**: http://localhost:8000/docs
+3. **Application Features**:
+   - **Main GUI**: Desktop interface with tabbed platform modules
    - **Dashboard**: http://localhost:8501
    - **Redis CLI**: `redis-cli`
    - **Database**: `sqlite3 data/aicd.db`

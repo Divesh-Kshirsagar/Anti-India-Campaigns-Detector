@@ -10,76 +10,125 @@ The Anti-India Campaign Detection System provides a comprehensive suite of featu
 mindmap
   root)System Features(
     (Data Collection)
-      Real-time Monitoring
-      Multi-source Intelligence
-      Automated Scanning
+      Multi-Platform Monitoring
+      Telegram Channel Scanning
+      Instagram Story/Post Tracking
+      Twitter Tweet Monitoring
+      Automated Account Operations
       Crowdsourced Tips
-      Covert Operations
+      Cross-Platform HUMINT
     (Analysis Engine)
       Natural Language Processing
       Sentiment Analysis
       Keyword Matching
       Engagement Tracking
       Threat Scoring
+      Cross-Platform Correlation
     (Intelligence Processing)
       Pattern Recognition
       Campaign Detection
       Influence Analysis
       Network Mapping
       Temporal Analysis
+      Platform-Specific Analysis
     (User Interface)
       Interactive Dashboard
       Real-time Alerts
       Custom Reports
       Data Visualization
       Mobile Access
+      Platform Unified View
     (Integration)
       API Services
       Webhook Support
       External Systems
       Authentication
       Data Export
+      Cross-Platform APIs
 ```
 
 ## Primary Features
 
-### 1. Real-Time Public Channel Monitoring
+### 1. Multi-Platform Real-Time Monitoring
 
-**Objective**: Continuously monitor public Telegram channels for suspicious content and emerging threats.
+**Objective**: Continuously monitor Telegram channels, Instagram stories/posts, and Twitter feeds for suspicious content and emerging threats across all major social media platforms.
 
-**Capabilities**:
-- **24/7 Automated Scanning**: Continuous monitoring of 500+ public channels
+**Platform Coverage**:
+
+#### Telegram Monitoring
+- **24/7 Channel Scanning**: Continuous monitoring of 500+ public channels
 - **Message Parsing**: Real-time extraction and analysis of text content
+- **Media Processing**: Image and document analysis capabilities
 - **Metadata Collection**: Comprehensive capture of message metadata and engagement metrics
-- **Rate Limit Management**: Intelligent API usage to avoid service restrictions
-- **Connection Recovery**: Automatic reconnection and error handling
+
+#### Instagram Monitoring  
+- **Story Surveillance**: Real-time story viewing and archiving before expiration
+- **Feed Post Analysis**: Automated post extraction with image/video analysis
+- **IGTV/Reels Tracking**: Comprehensive monitoring of all content formats
+- **Private Account Access**: Automated follow requests and approval monitoring
+- **Engagement Tracking**: Like, comment, and share pattern analysis
+
+#### Twitter Monitoring
+- **Real-time Stream**: Twitter API v2 filtered stream for instant tweet capture
+- **User Timeline Tracking**: Individual account monitoring and historical analysis  
+- **Hashtag Surveillance**: Trending topic and hashtag campaign detection
+- **Thread Analysis**: Complete conversation thread extraction and analysis
+- **Space Monitoring**: Twitter Spaces audio content tracking and transcription
 
 **Technical Implementation**:
 ```mermaid
 graph LR
-    CHANNELS[Monitored Channels] --> SCANNER[Channel Scanner]
-    SCANNER --> PARSER[Message Parser]
+    subgraph "Platform Scanners"
+        TELEGRAM[Telegram Scanner]
+        INSTAGRAM[Instagram Scanner]
+        TWITTER[Twitter Scanner]
+    end
+    
+    TELEGRAM --> PARSER[Unified Message Parser]
+    INSTAGRAM --> PARSER
+    TWITTER --> PARSER
+    
     PARSER --> VALIDATOR[Data Validator]
     VALIDATOR --> QUEUE[Processing Queue]
     
-    subgraph "Scanner Components"
+    subgraph "Platform-Specific Components"
         TELETHON[Telethon Client]
-        RATE_LIMITER[Rate Limiter]
-        ERROR_HANDLER[Error Handler]
-        RECONNECT[Auto Reconnect]
+        INSTAGRAPI[Instagrapi Client]
+        TWEEPY[Tweepy Client]
+        SELENIUM[Selenium WebDriver]
     end
     
-    SCANNER --> TELETHON
-    SCANNER --> RATE_LIMITER
-    SCANNER --> ERROR_HANDLER
-    SCANNER --> RECONNECT
+    TELEGRAM --> TELETHON
+    INSTAGRAM --> INSTAGRAPI
+    INSTAGRAM --> SELENIUM
+    TWITTER --> TWEEPY
+    TWITTER --> SELENIUM
+    
+    subgraph "Account Management"
+        ACCOUNT_POOL[Account Pool]
+        ROTATION[Auto Rotation]
+        SAFETY[Safety Measures]
+    end
+    
+    INSTAGRAPI --> ACCOUNT_POOL
+    TWEEPY --> ACCOUNT_POOL
+    SELENIUM --> ACCOUNT_POOL
+    ACCOUNT_POOL --> ROTATION
+    ROTATION --> SAFETY
 ```
 
+**Cross-Platform Capabilities**:
+- **Unified Data Format**: Standardized message structure across all platforms
+- **Account Rotation**: Automated account switching to avoid rate limits
+- **Human-like Behavior**: Randomized delays and interaction patterns
+- **Proxy Integration**: IP rotation for enhanced anonymity
+- **Session Persistence**: Long-term authenticated sessions
+
 **Key Metrics**:
-- **Coverage**: 500+ channels monitoring capability
-- **Latency**: <5 minutes from message post to system ingestion
-- **Reliability**: 99.5% uptime with automatic failover
-- **Throughput**: 50,000+ messages per day processing capacity
+- **Platform Coverage**: Telegram (500+ channels), Instagram (1000+ accounts), Twitter (2000+ accounts)
+- **Latency**: <5 minutes from content post to system ingestion across all platforms
+- **Reliability**: 99.5% uptime with automatic failover and account rotation
+- **Throughput**: 100,000+ messages per day processing capacity across platforms
 
 ### 2. Dynamic Keyword Database Management
 
@@ -208,7 +257,152 @@ stateDiagram-v2
 - **Priority Classification**: Automatic urgency assessment for tips
 - **Feedback System**: Status updates for high-quality submissions
 
-### 6. Honeypot Intelligence Operations
+### 6. Instagram Story & Content Intelligence
+
+**Objective**: Leverage Instagram's ephemeral and visual content for real-time threat detection and influence tracking.
+
+**Automated Capabilities**:
+```mermaid
+graph TB
+    ACCOUNT_POOL[Instagram Account Pool] --> STORY_MONITOR[Story Monitor]
+    ACCOUNT_POOL --> POST_TRACKER[Post Tracker]
+    ACCOUNT_POOL --> ENGAGEMENT_BOT[Engagement Bot]
+    
+    STORY_MONITOR --> STORY_ARCHIVE[Story Archive]
+    STORY_MONITOR --> OCR_ANALYSIS[OCR Text Analysis]
+    STORY_MONITOR --> MEDIA_ANALYSIS[Media Content Analysis]
+    
+    POST_TRACKER --> POST_METADATA[Post Metadata]
+    POST_TRACKER --> HASHTAG_TRACKER[Hashtag Tracking]
+    POST_TRACKER --> LOCATION_INTEL[Location Intelligence]
+    
+    ENGAGEMENT_BOT --> STRATEGIC_LIKES[Strategic Likes]
+    ENGAGEMENT_BOT --> FOLLOW_REQUESTS[Follow Requests]
+    ENGAGEMENT_BOT --> COMMENT_ANALYSIS[Comment Monitoring]
+    
+    subgraph "Safety Measures"
+        HUMAN_BEHAVIOR[Human-like Behavior]
+        PROXY_ROTATION[Proxy Rotation]
+        RATE_LIMITING[Smart Rate Limiting]
+        CHALLENGE_HANDLING[Challenge Resolution]
+    end
+    
+    STORY_MONITOR --> HUMAN_BEHAVIOR
+    POST_TRACKER --> PROXY_ROTATION
+    ENGAGEMENT_BOT --> RATE_LIMITING
+    ACCOUNT_POOL --> CHALLENGE_HANDLING
+```
+
+**Intelligence Collection**:
+- **Story Intelligence**: 24-hour story monitoring with automatic archiving
+- **Visual Content Analysis**: OCR and image recognition for text in images
+- **Hashtag Campaign Tracking**: Monitoring of trending anti-India hashtags
+- **Location-Based Intelligence**: Geospatial analysis of threat origins
+- **Influence Network Mapping**: Follower/following relationship analysis
+
+**Automation Features**:
+- **Strategic Engagement**: Automated likes and follows to maintain account credibility
+- **Private Account Access**: Automated follow request campaigns for restricted content
+- **Comment Intelligence**: Monitoring and analysis of comment threads
+- **Direct Message Monitoring**: Automated DM campaigns for HUMINT operations
+- **Account Verification**: Automated verification of suspicious accounts
+
+### 7. Twitter Intelligence & Sentiment Tracking
+
+**Objective**: Monitor Twitter's real-time conversation streams for emerging threats and coordinated campaigns.
+
+**Advanced Monitoring**:
+```mermaid
+graph LR
+    subgraph "Data Sources"
+        API_STREAM[Twitter API Stream]
+        WEB_SCRAPER[Selenium Scraper]
+        SEARCH_API[Search API]
+        USER_TIMELINE[User Timeline API]
+    end
+    
+    API_STREAM --> TWEET_PROCESSOR[Tweet Processor]
+    WEB_SCRAPER --> TWEET_PROCESSOR
+    SEARCH_API --> TWEET_PROCESSOR
+    USER_TIMELINE --> TWEET_PROCESSOR
+    
+    TWEET_PROCESSOR --> THREAD_ANALYZER[Thread Analyzer]
+    TWEET_PROCESSOR --> HASHTAG_MONITOR[Hashtag Monitor]
+    TWEET_PROCESSOR --> MENTION_TRACKER[Mention Tracker]
+    TWEET_PROCESSOR --> MEDIA_EXTRACTOR[Media Extractor]
+    
+    THREAD_ANALYZER --> CONVERSATION_MAP[Conversation Mapping]
+    HASHTAG_MONITOR --> TREND_ANALYSIS[Trend Analysis]
+    MENTION_TRACKER --> INFLUENCE_GRAPH[Influence Graph]
+    MEDIA_EXTRACTOR --> VISUAL_INTEL[Visual Intelligence]
+    
+    subgraph "Automation Features"
+        AUTO_FOLLOW[Strategic Following]
+        AUTO_RETWEET[Engagement Retweeting]
+        DM_CAMPAIGNS[DM Intelligence]
+        LIST_MANAGEMENT[List Curation]
+    end
+    
+    TWEET_PROCESSOR --> AUTO_FOLLOW
+    INFLUENCE_GRAPH --> AUTO_RETWEET
+    CONVERSATION_MAP --> DM_CAMPAIGNS
+    TREND_ANALYSIS --> LIST_MANAGEMENT
+```
+
+**Real-time Capabilities**:
+- **Filtered Stream Monitoring**: Real-time tweet capture based on keywords and accounts
+- **Hashtag Campaign Detection**: Automated identification of coordinated hashtag campaigns
+- **Bot Network Analysis**: Detection of automated bot networks and coordinated behavior
+- **Viral Content Tracking**: Early detection of viral anti-India content
+- **Space Intelligence**: Twitter Spaces monitoring and audio transcription
+
+**Behavioral Intelligence**:
+- **Coordinated Behavior Detection**: Identification of synchronized posting patterns
+- **Influence Operation Mapping**: Network analysis of information operations
+- **Engagement Manipulation**: Detection of artificial engagement boosting
+- **Account Clustering**: Grouping of related suspicious accounts
+- **Temporal Pattern Analysis**: Time-based analysis of coordinated activities
+
+### 8. Cross-Platform Campaign Correlation
+
+**Objective**: Identify coordinated campaigns spanning multiple social media platforms.
+
+**Correlation Engine**:
+```mermaid
+graph TD
+    subgraph "Platform Data"
+        TG_DATA[Telegram Messages]
+        IG_DATA[Instagram Content] 
+        TW_DATA[Twitter Posts]
+    end
+    
+    TG_DATA --> CORRELATOR[Campaign Correlator]
+    IG_DATA --> CORRELATOR
+    TW_DATA --> CORRELATOR
+    
+    CORRELATOR --> TIMELINE_SYNC[Timeline Synchronization]
+    CORRELATOR --> CONTENT_SIMILARITY[Content Similarity Analysis]
+    CORRELATOR --> ACCOUNT_LINKING[Cross-Platform Account Linking]
+    CORRELATOR --> NARRATIVE_TRACKING[Narrative Progression Tracking]
+    
+    TIMELINE_SYNC --> CAMPAIGN_MAP[Campaign Mapping]
+    CONTENT_SIMILARITY --> CAMPAIGN_MAP
+    ACCOUNT_LINKING --> CAMPAIGN_MAP
+    NARRATIVE_TRACKING --> CAMPAIGN_MAP
+    
+    CAMPAIGN_MAP --> THREAT_ASSESSMENT[Multi-Platform Threat Assessment]
+    CAMPAIGN_MAP --> ATTRIBUTION[Campaign Attribution]
+    CAMPAIGN_MAP --> PREDICTION[Spread Prediction]
+```
+
+**Advanced Analytics**:
+- **Cross-Platform User Identification**: Linking accounts across different platforms
+- **Narrative Consistency Tracking**: Following story evolution across platforms
+- **Timing Correlation**: Identifying synchronized content release patterns
+- **Media Forensics**: Reverse image search across platforms for shared content
+- **Influence Cascade Analysis**: Tracking information flow between platforms
+
+### 9. Honeypot Intelligence Operations
 
 **Objective**: Gather high-value intelligence from private groups through covert operations.
 
@@ -256,7 +450,7 @@ graph TB
 - **Safe Extraction**: Protocols for safe operation termination
 - **Cover Maintenance**: Continuous persona credibility management
 
-### 7. Unified Visualization Dashboard
+### 10. Unified Visualization Dashboard
 
 **Objective**: Provide analysts with a comprehensive, real-time view of threats and system status.
 
@@ -304,7 +498,7 @@ graph TB
 - **Sentiment Gauges**: Real-time sentiment monitoring
 - **Alert Dashboards**: Critical threat notifications
 
-### 8. Automated Alerting System
+### 11. Automated Alerting System
 
 **Objective**: Provide real-time notifications for high-priority threats requiring immediate attention.
 
@@ -341,7 +535,7 @@ graph TD
 
 ## Secondary Features
 
-### 9. Multi-format Report Generation
+### 12. Multi-format Report Generation
 
 **Capabilities**:
 - **Executive Summaries**: High-level threat overviews for leadership
@@ -350,7 +544,7 @@ graph TD
 - **Custom Reports**: User-defined report parameters and formats
 - **Automated Scheduling**: Regular report generation and distribution
 
-### 10. API Integration Framework
+### 13. API Integration Framework
 
 **Features**:
 - **RESTful API**: Standard HTTP API for external integrations
@@ -359,7 +553,7 @@ graph TD
 - **Authentication**: Secure API access with JWT tokens
 - **Rate Limiting**: API usage quotas and throttling
 
-### 11. Advanced Search and Filtering
+### 14. Advanced Search and Filtering
 
 **Search Capabilities**:
 - **Full-text Search**: Comprehensive message content searching
@@ -368,7 +562,7 @@ graph TD
 - **Boolean Queries**: Complex search expressions
 - **Saved Searches**: Persistent search queries for regular use
 
-### 12. Data Export and Integration
+### 15. Data Export and Integration
 
 **Export Formats**:
 - **CSV/Excel**: Structured data export for analysis

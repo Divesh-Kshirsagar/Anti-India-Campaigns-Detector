@@ -15,8 +15,8 @@ graph TB
     end
     
     subgraph "Presentation Layer"
-        DASH[Streamlit Dashboard]
-        API[FastAPI REST API]
+        GUI[tkinter Desktop GUI]
+        CHARTS[Matplotlib Visualizations]
         ALERTS[Alert System]
     end
     
@@ -231,30 +231,30 @@ User-facing components and external integrations:
 ```mermaid
 graph TB
     subgraph "User Interfaces"
-        DASHBOARD[Streamlit Dashboard]
-        MOBILE[Mobile Interface]
+        GUI_APP[tkinter Desktop Application]
         CLI[Command Line Tools]
+        CONFIG[Configuration Files]
     end
     
-    subgraph "API Layer"
-        REST[REST API]
-        WEBHOOK[Webhook Endpoints]
-        GRAPHQL[GraphQL API]
+    subgraph "Data Management"
+        FILES[File Export/Import]
+        STORAGE[Local Storage]
+        CONFIG_MGR[Configuration Manager]
     end
     
     subgraph "Integration Points"
-        SSO[Single Sign-On]
-        EXTERNAL[External Systems]
-        NOTIFICATIONS[Notification Services]
+        APIS[Social Media APIs]
+        EXPORT[Data Export]
+        LOGS[Logging System]
     end
     
-    DASHBOARD --> REST
-    MOBILE --> REST
-    CLI --> REST
+    GUI_APP --> FILES
+    GUI_APP --> STORAGE
+    CLI --> CONFIG_MGR
     
-    REST --> SSO
-    WEBHOOK --> EXTERNAL
-    NOTIFICATIONS --> EXTERNAL
+    FILES --> APIS
+    STORAGE --> EXPORT
+    LOGS --> EXPORT
 ```
 
 ## Security Architecture
@@ -360,44 +360,45 @@ graph LR
 
 ```mermaid
 graph TB
-    subgraph "Container Orchestration"
-        K8S[Kubernetes Cluster]
-        INGRESS[Ingress Controller]
-        SERVICE[Service Mesh]
+    subgraph "Application Structure"
+        MAIN[Main Application]
+        CONFIG[Configuration Manager]
+        LOGGER[Logging System]
     end
     
-    subgraph "Application Containers"
-        API_POD[API Pods]
-        WORKER_POD[Worker Pods]
-        DASHBOARD_POD[Dashboard Pods]
+    subgraph "Platform Modules"
+        TWITTER[Twitter Module]
+        INSTAGRAM[Instagram Module]
+        TELEGRAM[Telegram Module]
     end
     
-    subgraph "Data Containers"
-        DB_POD[Database Pod]
-        CACHE_POD[Cache Pod]
-        QUEUE_POD[Queue Pod]
+    subgraph "Data Components"
+        COLLECTOR[Data Collector]
+        EXPORTER[Data Exporter]
+        STORAGE[Local Storage]
     end
     
-    subgraph "Supporting Services"
-        MONITOR_POD[Monitoring]
-        LOG_POD[Logging]
-        BACKUP_POD[Backup]
+    subgraph "UI Components"
+        GUI[tkinter Interface]
+        CHARTS[Matplotlib Charts]
+        DIALOGS[File Dialogs]
     end
     
-    K8S --> API_POD
-    K8S --> WORKER_POD
-    K8S --> DASHBOARD_POD
+    MAIN --> TWITTER
+    MAIN --> INSTAGRAM
+    MAIN --> TELEGRAM
     
-    INGRESS --> API_POD
-    SERVICE --> DASHBOARD_POD
+    CONFIG --> TWITTER
+    CONFIG --> INSTAGRAM
+    CONFIG --> TELEGRAM
     
-    API_POD --> DB_POD
-    WORKER_POD --> CACHE_POD
-    API_POD --> QUEUE_POD
+    COLLECTOR --> STORAGE
+    EXPORTER --> STORAGE
+    GUI --> CHARTS
 ```
 
-### Infrastructure Components:
-- **Containerization**: Docker containers for consistent deployment
+### Application Components:
+- **Desktop Application**: Single executable tkinter application
 - **Orchestration**: Kubernetes for automated scaling and management
 - **Service Discovery**: Automatic service registration and discovery
 - **Health Monitoring**: Comprehensive system health checks and alerting

@@ -59,9 +59,9 @@ graph TD
 
 #### Primary Deliverables
 - **Functional Prototype**: Working proof-of-concept system
-- **Web Dashboard**: Streamlit-based visualization and analysis interface
+- **Desktop GUI**: tkinter-based interface for data collection and monitoring
 - **Alert Mechanism**: Real-time notifications for high-priority threats
-- **Intelligence Database**: Structured storage of flagged content and metadata
+- **Data Export System**: Structured export of flagged content and metadata
 
 ### Out-of-Scope Limitations
 

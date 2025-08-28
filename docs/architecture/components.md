@@ -8,8 +8,10 @@ The Anti-India Campaign Detection System is composed of interconnected modules t
 graph TB
     subgraph "Data Collection Components"
         SC[Scanner Client]
+        IC[Instagram Client]
+        TC[Twitter Client]
         TL[Tipline Bot]  
-        HP[Honeypot Client]
+        HP[Cross-Platform Honeypot]
         DV[Data Validator]
     end
     
@@ -50,6 +52,8 @@ graph TB
     
     %% Data Flow
     SC --> DV
+    IC --> DV
+    TC --> DV
     TL --> DV
     HP --> DV
     DV --> KM
@@ -204,6 +208,179 @@ sequenceDiagram
 - **Content Filtering**: Selective intelligence extraction
 - **Operational Security**: Maintains cover and avoids detection
 - **Evidence Chain**: Maintains evidence integrity for legal proceedings
+
+### Instagram Client (Visual SIGINT)
+
+**Purpose**: Automated Instagram monitoring and intelligence collection using real account automation.
+
+```mermaid
+classDiagram
+    class InstagramClient {
+        -instagrapi_client: Client
+        -selenium_driver: WebDriver
+        -account_pool: List[Account]
+        -proxy_manager: ProxyManager
+        +monitor_stories(targets: List[str])
+        +track_posts(hashtags: List[str])
+        +automated_engagement(strategy: EngagementStrategy)
+        +extract_story_content(story_id: str)
+        +analyze_user_network(username: str)
+        -rotate_account()
+        -handle_challenges()
+        -maintain_human_behavior()
+    }
+    
+    class AccountManager {
+        -active_accounts: Dict[str, Account]
+        -rotation_schedule: Dict[str, datetime]
+        +get_available_account(): Account
+        +mark_account_active(account_id: str)
+        +handle_account_restriction(account_id: str)
+        +validate_account_health(account_id: str)
+    }
+    
+    class StoryIntelligence {
+        +capture_expiring_content(user_id: str)
+        +perform_ocr_analysis(image_url: str)
+        +extract_story_metadata(story: Story)
+        +track_story_viewers(story_id: str)
+    }
+    
+    class EngagementBot {
+        +strategic_likes(posts: List[Post])
+        +follow_target_accounts(usernames: List[str])
+        +comment_intelligence(post_id: str)
+        +direct_message_campaigns(targets: List[str])
+    }
+    
+    InstagramClient --> AccountManager
+    InstagramClient --> StoryIntelligence
+    InstagramClient --> EngagementBot
+```
+
+**Advanced Capabilities**:
+- **Story Archiving**: 24-hour window story capture and analysis
+- **Private Account Infiltration**: Automated follow request campaigns
+- **Visual Content Analysis**: OCR and image recognition for threat detection
+- **Engagement Intelligence**: Strategic interaction to maintain account credibility
+- **Network Mapping**: Follower/following relationship analysis for influence tracking
+
+**Anti-Detection Measures**:
+```python
+class InstagramSafetyProtocol:
+    def human_like_behavior(self):
+        """Implement human-like interaction patterns"""
+        delay_range = random.uniform(2, 8)  # Random delays between actions
+        scroll_patterns = self.random_scroll()  # Realistic scrolling behavior
+        interaction_variety = self.mixed_actions()  # Varied action sequences
+        
+    def account_health_monitoring(self):
+        """Monitor account status for restrictions"""
+        challenge_detection = self.check_challenges()
+        rate_limit_tracking = self.monitor_api_limits()
+        engagement_rate_analysis = self.track_success_rates()
+```
+
+### Twitter Client (Real-time SIGINT)
+
+**Purpose**: Comprehensive Twitter monitoring and automated intelligence operations.
+
+```mermaid
+classDiagram
+    class TwitterClient {
+        -tweepy_client: tweepy.Client
+        -selenium_driver: WebDriver
+        -stream_handler: StreamHandler
+        -account_pool: List[TwitterAccount]
+        +monitor_realtime_stream(keywords: List[str])
+        +track_user_timelines(usernames: List[str])
+        +analyze_hashtag_campaigns(hashtags: List[str])
+        +extract_thread_conversations(tweet_id: str)
+        +monitor_twitter_spaces(space_ids: List[str])
+        -handle_rate_limits()
+        -switch_to_selenium_backup()
+    }
+    
+    class StreamMonitor {
+        -filtered_stream: tweepy.StreamRule
+        +setup_keyword_filters(keywords: List[str])
+        +process_realtime_tweets(tweet: Tweet)
+        +detect_viral_content(engagement_metrics: Dict)
+        +identify_bot_networks(user_patterns: List[User])
+    }
+    
+    class ThreadAnalyzer {
+        +extract_conversation_tree(root_tweet_id: str)
+        +map_user_interactions(thread: List[Tweet])
+        +detect_coordinated_responses(thread: List[Tweet])
+        +analyze_sentiment_flow(conversation: List[Tweet])
+    }
+    
+    class AutomationEngine {
+        +strategic_retweets(tweets: List[Tweet])
+        +targeted_following(accounts: List[str])
+        +dm_intelligence_campaigns(targets: List[str])
+        +list_management(categories: Dict[str, List[str]])
+    }
+    
+    TwitterClient --> StreamMonitor
+    TwitterClient --> ThreadAnalyzer
+    TwitterClient --> AutomationEngine
+```
+
+**Real-time Intelligence Features**:
+- **Filtered Stream Processing**: Live tweet capture with advanced filtering
+- **Viral Content Detection**: Early identification of trending anti-India content
+- **Coordinated Behavior Analysis**: Detection of bot networks and information operations
+- **Space Intelligence**: Twitter Spaces monitoring with audio transcription
+- **Thread Reconstruction**: Complete conversation thread analysis
+
+**Backup Systems**:
+```python
+class TwitterFailoverSystem:
+    def api_to_selenium_fallback(self):
+        """Seamless fallback to web scraping when API limits hit"""
+        if self.api_rate_limited():
+            self.selenium_driver = self.create_stealth_browser()
+            self.continue_monitoring_via_web()
+            
+    def multi_account_rotation(self):
+        """Rotate between multiple Twitter accounts"""
+        current_account = self.get_next_available_account()
+        self.switch_authentication(current_account)
+        self.continue_operations()
+```
+
+**Cross-Platform Correlation Engine**:
+```mermaid
+graph TB
+    subgraph "Data Sources"
+        TG[Telegram Messages]
+        IG[Instagram Content]
+        TW[Twitter Posts]
+    end
+    
+    TG --> CORRELATION[Cross-Platform Correlator]
+    IG --> CORRELATION
+    TW --> CORRELATION
+    
+    CORRELATION --> TIMELINE[Timeline Analysis]
+    CORRELATION --> CONTENT[Content Similarity]
+    CORRELATION --> ACCOUNT[Account Linking]
+    CORRELATION --> PATTERN[Pattern Recognition]
+    
+    TIMELINE --> UNIFIED_INTEL[Unified Intelligence Report]
+    CONTENT --> UNIFIED_INTEL
+    ACCOUNT --> UNIFIED_INTEL
+    PATTERN --> UNIFIED_INTEL
+```
+
+**Multi-Platform Intelligence Fusion**:
+- **Account Cross-Referencing**: Linking accounts across Telegram, Instagram, and Twitter
+- **Campaign Timeline Reconstruction**: Coordinated narrative tracking across platforms
+- **Content Propagation Analysis**: Following information flow between platforms
+- **Influence Network Mapping**: Cross-platform relationship analysis
+- **Attribution and Source Identification**: Identifying campaign originators
 
 ## Processing Components
 
