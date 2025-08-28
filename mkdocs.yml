@@ -120,6 +120,7 @@ nav:
     - Dashboard: features/dashboard.md
   - Implementation Strategy:
     - Problem-Solution Mapping: strategy/problem-solution.md
+    - Social Media Automation: strategy/automation-strategy.md
     - Intelligence Gathering: strategy/intelligence.md
     - Data Flow: strategy/data-flow.md
     - Security Considerations: strategy/security.md
