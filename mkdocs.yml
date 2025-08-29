@@ -1,10 +1,10 @@
-site_name: Anti-India Campaign Detection System
-site_description: Comprehensive documentation for the Anti-India Campaign Detection System
-site_author: Security Intelligence Team
-site_url: https://security-intel.github.io/anti-india-campaign-detector/
+site_name: Anti-India Campaign Detector - Research Prototype
+site_description: Simple research prototype for detecting social media disinformation campaigns
+site_author: Research Team
+site_url: https://research.github.io/anti-india-campaign-detector/
 
-repo_name: security-intel/anti-india-campaign-detector
-repo_url: https://github.com/security-intel/anti-india-campaign-detector
+repo_name: research/anti-india-campaign-detector
+repo_url: https://github.com/research/anti-india-campaign-detector
 edit_uri: edit/main/docs/
 
 theme:
@@ -85,7 +85,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: security-intel
+      user: research
       repo: anti-india-campaign-detector
   - pymdownx.mark
   - pymdownx.smartsymbols
@@ -102,52 +102,36 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Vision: vision.md
   - Project Overview:
     - Overview: project-overview/overview.md
     - Scope & Definitions: project-overview/scope-definitions.md
     - Objectives: project-overview/objectives.md
+    - Versions: project-overview/versions.md
   - System Architecture:
     - Architecture Overview: architecture/overview.md
     - System Components: architecture/components.md
     - Technology Stack: architecture/technology-stack.md
     - UML Diagrams: architecture/uml-diagrams.md
     - Sequence Diagrams: architecture/sequence-diagrams.md
-  - Core Features:
+  - Features:
     - Feature Overview: features/overview.md
-    - SIGINT Module: features/sigint.md
-    - HUMINT Module: features/humint.md
-    - NLP Engine: features/nlp.md
-    - Dashboard: features/dashboard.md
-  - Implementation Strategy:
+  - Strategy:
     - Problem-Solution Mapping: strategy/problem-solution.md
-    - Social Media Automation: strategy/automation-strategy.md
-    - Intelligence Gathering: strategy/intelligence.md
-    - Data Flow: strategy/data-flow.md
-    - Security Considerations: strategy/security.md
-  - API Reference:
-    - API Overview: api/overview.md
-    - Scanner API: api/scanner.md
-    - Analysis API: api/analysis.md
-    - Dashboard API: api/dashboard.md
+    - Automation Strategy: strategy/automation-strategy.md
   - Development:
     - Setup Guide: development/setup.md
-    - Development Environment: development/environment.md
-    - Testing: development/testing.md
-    - Deployment: development/deployment.md
   - User Guides:
     - Quick Start: guides/quickstart.md
-    - Configuration: guides/configuration.md
-    - Operations: guides/operations.md
-    - Troubleshooting: guides/troubleshooting.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/security-intel/anti-india-campaign-detector
+      link: https://github.com/research/anti-india-campaign-detector
     - icon: fontawesome/solid/paper-plane
-      link: mailto:team@security.gov
+      link: mailto:team@research.edu
   version:
     provider: mike
     default: stable
 
-copyright: Copyright &copy; 2024 Security Intelligence Team
+copyright: Copyright &copy; 2025 Research Team
