@@ -1,157 +1,132 @@
-# Anti-India Campaign Detection System
-
-![System Logo](assets/logo.png){ width="200" }
+# Anti-India Campaign Detector - Research Prototype
 
 ## Overview
 
-The **Anti-India Campaign Detection System** is a comprehensive intelligence-gathering and analysis platform designed to identify, monitor, and analyze hostile narratives targeting India on digital platforms. This system leverages advanced Natural Language Processing (NLP), multi-layered intelligence strategies, and real-time monitoring to provide actionable intelligence to security agencies.
+The **Anti-India Campaign Detector** is a simple research prototype designed to collect and analyze social media data for detecting potential coordinated disinformation campaigns. This system focuses on basic data collection and storage using a straightforward desktop application.
 
 ## 🚀 Key Features
 
-- **Multi-Platform Monitoring**: Continuous surveillance across Telegram, Instagram, and Twitter
-- **Automated Account Operations**: Real account automation for accessing restricted content
-- **Multi-Intelligence Approach**: Combines SIGINT, HUMINT, and OSINT capabilities
-- **Advanced NLP**: Sentiment analysis and contextual filtering to reduce false positives
-- **Interactive GUI**: tkinter-based desktop application for data collection and monitoring
-- **Cross-Platform HUMINT**: Advanced capabilities for accessing private communities across platforms
-- **Crowdsourced Intelligence**: Multi-platform tipline for community-driven intelligence gathering
+- **Simple Data Collection**: Basic collection from Twitter and Telegram platforms
+- **Desktop Application**: tkinter-based GUI for easy operation
+- **SQLite Storage**: Simple database for storing collected data  
+- **Basic Processing**: Message cleaning and organization
+- **Data Export**: Export collected data in CSV/JSON formats
+- **Research Focus**: Designed for academic and research purposes
 
-## 🎯 Mission Statement
+## 🎯 Project Purpose
 
-To provide security agencies with a robust, intelligent, and adaptable system for early detection and analysis of anti-India campaigns, enabling timely and informed preventive actions against digital threats to national security.
+To provide researchers with a simple tool for collecting social media data to study disinformation patterns and campaign coordination tactics in a controlled, ethical research environment.
 
-## 📊 System Capabilities
+## 📊 System Architecture
 
 ```mermaid
-graph TB
-    A[Data Collection] --> B[Processing & Analysis]
-    B --> C[Intelligence Generation]
-    C --> D[Visualization & Alerts]
-    
-    subgraph "Collection Methods"
-        A1[Telegram Scanner]
-        A2[Instagram Automation]
-        A3[Twitter Automation]
-        A4[Tipline Bot]
-        A5[Cross-Platform Honeypot]
+flowchart TD
+    subgraph DataCollection[Data Collection]
+        A[Twitter Collector]
+        B[Telegram Collector]
     end
-    
-    subgraph "Analysis Engine"
-        B1[Keyword Matching]
-        B2[Sentiment Analysis]
-        B3[Engagement Tracking]
+
+    subgraph Storage[Storage]
+        C[SQLite Database]
+        D[File Storage]
     end
-    
-    subgraph "Output"
-        D1[Dashboard]
-        D2[Alerts]
-        D3[Reports]
+
+    subgraph UI[Desktop Application]
+        E[tkinter GUI]
+        F[Matplotlib Charts]
     end
-    
-    A --> A1
-    A --> A2
-    A --> A3
-    A --> A4
-    A --> A5
-    
-    B --> B1
-    B --> B2
-    B --> B3
-    
-    D --> D1
-    D --> D2
-    D --> D3
+
+    A --> C
+    B --> C
+    C --> E
+    D --> E
+    E --> F
 ```
 
-## 🏗️ Architecture Overview
+## 🏗️ Simple Architecture
 
-The system follows a modular, layered architecture:
+The prototype follows a straightforward architecture:
 
-1. **Data Collection Layer**: Multi-source intelligence gathering
-2. **Processing Layer**: Advanced NLP and analysis engines  
-3. **Storage Layer**: Efficient data management and retrieval
-4. **Presentation Layer**: Interactive dashboards and alerting
+1. **Data Collection**: Twitter and Telegram collectors
+2. **Storage**: SQLite database for all data
+3. **Processing**: Basic message cleaning and organization
+4. **Interface**: tkinter desktop application
 
 ## 🛠️ Technology Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
-| **Core Language** | Python 3.9+ | System development |
-| **Telegram Integration** | Telethon | Channel monitoring |
-| **Instagram Automation** | instagrapi, selenium | Story/post monitoring |
-| **Twitter Automation** | tweepy, selenium | Tweet monitoring |
-| **NLP Engine** | VADER, spaCy | Sentiment analysis |
-| **GUI Framework** | tkinter | Desktop user interface |
-| **Visualization** | matplotlib | Data visualization |
-| **Database** | SQLite, Redis | Data storage |
-| **Configuration** | ConfigParser | Settings management |
+| **Core Language** | Python 3.8+ | System development |
+| **Twitter Collection** | playwright | Browser automation |
+| **Telegram Integration** | python-telegram-bot | Bot API integration |
+| **Database** | SQLite | Data storage |
+| **GUI Framework** | tkinter | Desktop interface |
+| **Visualization** | matplotlib | Basic charts |
+| **Data Processing** | pandas | Data manipulation |
 
-## 🚦 Project Status
+## 📋 Quick Start
 
-- **Phase**: Proof of Concept Development
-- **Version**: 0.1.0
-- **Target Platforms**: Telegram, Instagram, Twitter (Multi-Platform Focus)
-- **Deployment**: Development Environment
+1. **Install Dependencies**
+   ```bash
+   pip install playwright python-telegram-bot pandas matplotlib
+   ```
 
-## 📖 Quick Navigation
+2. **Configure Settings**
+   - Add your API keys to the configuration
+   - Set up collection parameters
 
-<div class="grid cards" markdown>
+3. **Launch Application**
+   ```bash
+   python main.py
+   ```
 
--   :material-book-open-variant:{ .lg .middle } __Project Overview__
+4. **Start Collecting**
+   - Configure data sources in the GUI
+   - Start collection processes
+   - Monitor progress and export data
 
-    ---
+## 📊 Current Capabilities
 
-    Understand the project's scope, objectives, and key definitions
+- Basic Twitter data collection via browser automation
+- Telegram channel/group message monitoring
+- Simple data storage and organization
+- Basic data visualization and export
+- Desktop GUI for easy operation
 
-    [:octicons-arrow-right-24: Learn more](project-overview/overview.md)
+## � Research Applications
 
--   :material-cog:{ .lg .middle } __System Architecture__
+- Academic study of social media campaigns
+- Analysis of coordination patterns
+- Development of detection algorithms
+- Training data generation for ML models
+- Educational purposes and demonstrations
 
-    ---
+## 📈 Future Development
 
-    Explore the technical architecture, components, and design patterns
+See [Vision Document](vision.md) for planned enhancements including advanced NLP, real-time analysis, and expanded platform support.
 
-    [:octicons-arrow-right-24: Architecture](architecture/overview.md)
+## 🔒 Ethical Guidelines
 
--   :material-feature-search:{ .lg .middle } __Core Features__
+- Research and educational use only
+- Respect platform terms of service
+- Data privacy and anonymization
+- No surveillance of individuals
+- Academic and research transparency
 
-    ---
+## � Documentation Structure
 
-    Discover the system's capabilities and intelligence-gathering strategies
+- **[Project Overview](project-overview/overview.md)**: Project scope and objectives
+- **[Architecture](architecture/overview.md)**: Simple system architecture
+- **[Features](features/overview.md)**: Current capabilities
+- **[Development](development/setup.md)**: Setup and development guide
+- **[Vision](vision.md)**: Future enhancements and features
 
-    [:octicons-arrow-right-24: Features](features/overview.md)
+## 🚀 Getting Started
 
--   :material-code-tags:{ .lg .middle } __Development__
-
-    ---
-
-    Set up your development environment and start contributing
-
-    [:octicons-arrow-right-24: Get Started](development/setup.md)
-
-</div>
-
-## ⚡ Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/security-intel/anti-india-campaign-detector.git
-cd anti-india-campaign-detector
-
-# Install dependencies
-pip install -e ".[dev,docs]"
-
-# Start the development server
-aicd-dashboard --debug
-```
-
-## 🔒 Security & Compliance
-
-This system is designed with security and legal compliance as primary considerations:
-
-- **Privacy First**: No user de-anonymization or IP tracking
-- **Legal Compliance**: Uses account automation within platform Terms of Service
-- **Ethical OSINT**: Follows responsible intelligence gathering practices
+1. Read the [Quick Start Guide](guides/quickstart.md)
+2. Review the [Project Versions](project-overview/versions.md) 
+3. Set up your [Development Environment](development/setup.md)
+4. Explore the [Architecture Overview](architecture/overview.md)
 - **Account Safety**: Implements human-like behavior patterns to avoid detection
 - **Data Protection**: Secure handling of sensitive intelligence data
 
